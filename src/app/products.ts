@@ -11,7 +11,7 @@ export const products = [
   },
   {
     name: 'iPhone 12 Mini',
-    price: 799,
+    price: 699,
     description: 'A small phone with one of the best screens'
   }
   ];

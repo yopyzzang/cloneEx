@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { products } from '../products';
+import {Component, OnInit} from '@angular/core';
+import {products} from '../products';
 
 
 @Component({
@@ -10,9 +10,19 @@ import { products } from '../products';
 export class ProductListComponent implements OnInit {
   products = products;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  // tslint:disable-next-line:typedef
+  share(product: any) {
+    window.alert(`The ${product} is shared.`);
+  }
+  // tslint:disable-next-line:typedef
+  onNotify(){
+    window.alert('You Will be notified when the product goes on sale');
   }
 
 }
