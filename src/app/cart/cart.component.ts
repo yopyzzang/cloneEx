@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {CartService} from '../cart.service';
 
@@ -31,6 +31,16 @@ export class CartComponent implements OnInit {
     this.checkoutForm.reset();
 
     console.warn('Your order has been submitted', customerData);
+  }
+
+  sumCost(cost: any[]): any{
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < cost.length ; i++) {
+      // tslint:disable-next-line:no-unused-expression prefer-for-of
+      for (let j = 0; j < cost.length; j++) {
+        return cost[i] + cost[j - 1];
+      }
+    }
   }
 
 }

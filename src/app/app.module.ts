@@ -13,7 +13,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { CartComponent } from './cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './shipping/shipping.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HeroesComponent } from './heroes/heroes.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     TopBarComponent,
     CartComponent,
     ShippingComponent,
+    HeroesComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,8 +36,10 @@ import {ReactiveFormsModule} from '@angular/forms';
       {path: 'products/:productId', component: ProductDetailsComponent},
       {path: 'cart', component: CartComponent},
       {path: 'shipping', component: ShippingComponent},
+      {path: 'heroes', component: HeroesComponent}
     ]),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
