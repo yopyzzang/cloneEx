@@ -1,0 +1,4 @@
+GET localhost:30044/testnode
+POST localhost:30044/testnode
+PUT localhost:30044/testnode
+DELETE localhost:30044/testnode
