@@ -70,10 +70,19 @@ client.connect()
   .catch(err=>console.error('DB CONNECTION ERROR',err.stack))
 
 const insertSql = "INSERT INTO testnode (id, pw) VALUES($1, $2) RETURNING *";
+app.get('/sql/id/:id',((req, res,next) =>{
+  console.log(req.params);
+}))
+
+app.get('/sql/id/:id/pw/:pw',((req, res,next) =>{
+  console.log(req.params);
+}))
+
 const values = ['dmfgalllghjs', '12234534'];
 
 const selectSql = "SELECT * FROM testnode";
 let list = []
+
 
 const insert = client.query(insertSql, values, (err, res) => {
   if (err) {
@@ -97,9 +106,7 @@ app.get('/sql',(req,res,next)=>{
 const selectUser = "SELECT * FROM testnode WHERE ID = $1"
 
 let userID = [];
-app.get('/sql/id/:id',((req, res,next) =>{
-req.params;
-}))
+
 
 console.log(userID);
 
@@ -108,7 +115,5 @@ client.query(selectUser, [userID],(err,res)=>{
   console.log(res)
 })
 
-app.get('sql',(((req, res, next) =>{
-  console.log(req.query)
-} )))
+
 
